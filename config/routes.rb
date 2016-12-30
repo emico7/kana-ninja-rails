@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :questions
+
   get 'about' => 'menu#about'
 
   devise_for :users
