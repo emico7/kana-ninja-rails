@@ -1,28 +1,28 @@
 <div>
+  <%= content_tag :div, id: 'question-container', data: {image_file_name: @question.image_file_name, audio_file_name: @question.audio_file_name, answer: @question.answer, letters: @question.letters} do %>
   <div class="container">
     <div class="instruction">
       <p>Click on the image to hear the sound</p>
     </div>
 
-    <div class="image">
-      <img class="question-image" src"">
-      <p class="image-translation"></p>
+    <div class="question-image">
+      <%= image_tag(@question.image_file_name) %>
     </div>
 
-    <div class="letter-container"></div>
+    <!-- <div class="letter-container"></div>
 
     <div class="user-answer"></div>
     <div class="submit-button">Check Answer</div>
-  </div>
+  </div> -->
 
   <!-- Modal-->
-  <div id="answer-result-modal" class="modal">
+  <!-- <div id="answer-result-modal" class="modal">
     <div class="modal-content">
       <span class="close">Close</span>
       <p class="result-text">RESULT</p>
     </div>
-  </div>
+  </div> -->
+  <% end %>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.2.0/buzz.min.js"></script>
-<script src="assets/javascripts/questions.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.2.0/buzz.min.js"></script> -->
