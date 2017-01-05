@@ -1,5 +1,5 @@
 <div>
-  <%= content_tag :div, id: 'question-container', data: {image_file_name: @question.image_file_name, audio_file_name: @question.audio_file_name, answer: @question.answer, letters: @question.letters} do %>
+  <%= content_tag :div, id: 'question-container', data: {image_file_name: @question.image_file_name, audio_file_name: asset_path(@question.audio_file_name), answer: @question.answer, letters: @question.letters} do %>
   <div class="container">
     <div class="instruction">
       <p>Click on the image to hear the sound</p>
@@ -9,19 +9,23 @@
       <%= image_tag(@question.image_file_name) %>
     </div>
 
-    <!-- <div class="letter-container"></div>
+    <div class="letter-container">
+      <!-- <% @question.letters.each_char do |l| %>
+        <div class="letter-button"><%= l %></div>
+      <% end %> -->
+    </div>
 
     <div class="user-answer"></div>
     <div class="submit-button">Check Answer</div>
-  </div> -->
+  </div>
 
-  <!-- Modal-->
-  <!-- <div id="answer-result-modal" class="modal">
+  <!-- Modal -->
+  <div id="answer-result-modal" class="modal">
     <div class="modal-content">
       <span class="close">Close</span>
       <p class="result-text">RESULT</p>
     </div>
-  </div> -->
+  </div>
   <% end %>
 </div>
 
