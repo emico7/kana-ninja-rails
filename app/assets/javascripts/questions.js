@@ -130,19 +130,19 @@ function Question(image, answer, letters) {
 $(document).ready(function() {
 
 // $(document).on('ready page:load', function() {
-  console.log($('#question-container').data('imageFileName'));
-  console.log($('#question-container').data('audioFileName'));
-  console.log($('#question-container').data('answer'));
-  console.log($('#question-container').data('letters'));
+  // console.log($('#question-container').data('imageFileName'));
+  // console.log($('#question-container').data('audioFileName'));
+  // console.log($('#question-container').data('answer'));
+  // console.log($('#question-container').data('letters'));
 
-  // var varImageFileName = $('#question-container').data('imageFileName');
-  // var varAudioFileName = $('#question-container').data('audioFileName');
-  //
-  // var currentQuestionImage = new Image(varImageFileName, varAudioFileName);
+  var varImageFileName = $('#question-container').data('imageFileName');
+  var varAudioFileName = $('#question-container').data('audioFileName');
+
+  var currentQuestionImage = new Image(varImageFileName, varAudioFileName);
 
   console.log(currentQuestionImage);
 
-  createLetterButtons();
+  // createLetterButtons();
 
   // var $currentLetter = $('.letter-button');
   // var $userAnswer = $('.user-answer');
