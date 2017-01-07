@@ -18,6 +18,10 @@
 .question-image {
     text-align: center;
     border-style: none;
+    cursor: pointer;
+    cursor: hand;
+    width: 30%;
+    margin: auto;
 }
 
 .image-translation {
@@ -32,6 +36,8 @@
     background-color: #ffffcc;
     padding: 15px;
     border-radius: 15px;
+    cursor: pointer;
+    cursor: hand;
 }
 
 .letter-button {
@@ -40,6 +46,8 @@
     background-color: #E7E7E7;
     padding: 15px;
     border-radius: 15px;
+    cursor: pointer;
+    cursor: hand;
 }
 
 .user-answer {
@@ -64,10 +72,13 @@
     height: 35px;
     background-color: #E7E7E7;
     border-radius: 15px;
+    cursor: pointer;
+    cursor: hand;
 }
 
 
 .modal {
+    text-align: center;
     display: none;
     position: fixed;
     top: 0;
@@ -88,7 +99,7 @@
     left: 25%;
     border: 1px solid #888;
     width: 50%;
-    height: 50%;
+    height: 30%;
     text-align: center;
     /*-webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
@@ -106,6 +117,8 @@
     color: #aaa;
     float: right;
     font-size: 20px;
+    cursor: pointer;
+    cursor: hand;
 }
 
 .result-text {
