@@ -118,6 +118,11 @@ $(document).ready(function() {
     currentQuestionImage.audioFile.play();
   });
 
+  $('.clear-answer').click(function() {
+    userAnswer = "";
+    $userAnswer.html(userAnswer);
+  })
+
   $('.submit-button').click(function() {
     console.log("user: " + userAnswer);
     console.log("answer: " + currentQuestion.answer);
