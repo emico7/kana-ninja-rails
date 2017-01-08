@@ -124,8 +124,6 @@ $(document).ready(function() {
   })
 
   $('.submit-button').click(function() {
-    console.log("user: " + userAnswer);
-    console.log("answer: " + currentQuestion.answer);
 
       if (currentQuestion.answer === userAnswer) {
         $(".result-text").html("Correct!");
@@ -134,6 +132,8 @@ $(document).ready(function() {
       }
 
       $("#answer-result-modal").show();
+      userAnswer = "";
+      $userAnswer.html(userAnswer);
   });
 
   $(".close").click(function() {

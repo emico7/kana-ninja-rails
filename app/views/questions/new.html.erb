@@ -23,6 +23,11 @@
         <%= f.text_field :letters, class: 'form-control', placeholder: "Enter letters" %>
       </div>
 
+      <div class="form-group">
+        <%= f.label :translation %>
+        <%= f.text_field :translation, class: 'form-control', placeholder: "Enter translation" %>
+      </div>
+
       <%= f.submit "Save", class: 'btn btn-success' %>
     <% end %>
   </div>

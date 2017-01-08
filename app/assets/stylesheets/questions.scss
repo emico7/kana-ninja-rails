@@ -4,7 +4,7 @@
 
 .instruction {
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .container {
@@ -33,7 +33,7 @@
     font-size: 20px;
     display: inline-block;
     margin-bottom: 50px;
-    background-color: #ffffcc;
+    background-color: #ffffcc;;
     padding: 15px;
     border-radius: 15px;
     cursor: pointer;
@@ -58,7 +58,7 @@
     height: 50px;
     width: 200px;
     border-style: solid;
-    border-width: 2px;
+    border-width: 1px;
     font-size: 30px;
     border-radius: 15px;
 }
@@ -116,9 +116,12 @@
 .close {
     color: #aaa;
     float: right;
-    font-size: 20px;
     cursor: pointer;
     cursor: hand;
+    padding: 5px;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 10px;
 }
 
 .result-text {
