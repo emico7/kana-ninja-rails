@@ -24,5 +24,21 @@
  }
 
 .nav-tabs {
-  font-size: 20px;
+   font-size: 20px;
+}
+
+a:link {
+   text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+a:hover {
+    // color: #ffbf00;
 }

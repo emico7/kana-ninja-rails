@@ -13,16 +13,18 @@
       <!-- <% @question.letters.each_char do |l| %>
         <div class="letter-button"><%= l %></div>
       <% end %> -->
+    <p class="image-translation">(<%= @question.translation %>)</p>
     </div>
 
     <div class="user-answer"></div>
+    <div class="clear-answer">Clear</div>
     <div class="submit-button">Check Answer</div>
   </div>
 
   <!-- Modal -->
   <div id="answer-result-modal" class="modal">
     <div class="modal-content">
-      <span class="close">Close</span>
+      <span class="close">Next</span>
       <p class="result-text">RESULT</p>
     </div>
   </div>

@@ -1,14 +1,28 @@
-<div class="text-center">
-  <h1>Kana Ninja</h1>
-  <ul class="list-unstyled">
-    <li><a class="menu-btn" href="#">Prep 1</a></li>
-    <li><a class="menu-btn" href="#">Prep 1</a></li>
-    <li><a class="menu-btn" href="#">Prep 1</a></li>
-    <li><a class="menu-btn" href="#">Prep 1</a></li>
-    <li><a class="menu-btn" href="#">Prep 1</a></li>
-    <li><a class="menu-btn" href="#">Prep 1</a></li>
-  </ul>
+<div class="text-center menu-page">
+  <h1>Kana Ninja<span id="ninja-icon"><%= image_tag("ninja-icon.png", size: "80x80") %></span></h1>
+  <!-- <ul class="list-unstyled menu-item">
+    <li><span><%= image_tag("makimono.png", size: "50x50") %></span><a class="menu-btn" href="#"><span></span>Prep 1</a></li>
+    <li><span class="syuriken-image"><%= image_tag("syuriken.png", size: "50x50") %></span><a class="menu-btn" href="#">Exercise 1</a></li>
+    <li><a class="menu-btn" href="#">Prep 3</a></li>
+    <li><a class="menu-btn" href="#">Prep 4</a></li>
+  </ul> -->
+
+  <table class="menu-table">
+    <tr>
+      <td><%= image_tag("makimono.png", size: "50x50") %></td>
+      <td><a class="menu-btn" href="#">Prep 1</a></li></td>
+    </tr>
+    <tr>
+      <td><%= image_tag("syuriken.png", size: "50x50") %></td>
+      <td><a class="menu-btn" href="/questions/1"">Exercise 1</a></li></td>
+    </tr>
+    <tr>
+      <td><%= image_tag("makimono.png", size: "50x50") %></td>
+      <td><a class="menu-btn" href="#">Prep 2 (Coming soon)</a></td>
+    </tr>
+    <tr>
+      <td><%= image_tag("syuriken.png", size: "50x50") %></td>
+      <td><a class="menu-btn" href="#">Exercise 2 (Coming soon)</a></li></td>
+    </tr>
+  </table>
 </div>
-
-
-<p>Menu for the app will be here</p>

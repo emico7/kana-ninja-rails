@@ -4,7 +4,7 @@
 
 .instruction {
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .container {
@@ -18,6 +18,10 @@
 .question-image {
     text-align: center;
     border-style: none;
+    cursor: pointer;
+    cursor: hand;
+    width: 30%;
+    margin: auto;
 }
 
 .image-translation {
@@ -26,12 +30,14 @@
 }
 
 .submit-button {
-    font-size: 15px;
+    font-size: 20px;
     display: inline-block;
     margin-bottom: 50px;
-    background-color: #ffffcc;
+    background-color: #ffffcc;;
     padding: 15px;
     border-radius: 15px;
+    cursor: pointer;
+    cursor: hand;
 }
 
 .letter-button {
@@ -40,14 +46,39 @@
     background-color: #E7E7E7;
     padding: 15px;
     border-radius: 15px;
+    cursor: pointer;
+    cursor: hand;
 }
 
 .user-answer {
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+    padding: none;
+    height: 50px;
+    width: 200px;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 30px;
+    border-radius: 15px;
+}
+
+.clear-answer {
     font-size: 20px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: 35px;
+    background-color: #E7E7E7;
+    border-radius: 15px;
+    cursor: pointer;
+    cursor: hand;
 }
 
 
 .modal {
+    text-align: center;
     display: none;
     position: fixed;
     top: 0;
@@ -62,11 +93,13 @@
 .modal-content {
     background-color: #fefefe;
     position: relative;
+    padding-top: 20px;
+    padding-right: 20px;
     top: 25%;
     left: 25%;
     border: 1px solid #888;
     width: 50%;
-    height: 50%;
+    height: 30%;
     text-align: center;
     /*-webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
@@ -83,9 +116,15 @@
 .close {
     color: #aaa;
     float: right;
-    font-size: 20px;
+    cursor: pointer;
+    cursor: hand;
+    padding: 5px;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 10px;
 }
 
 .result-text {
+    text-align: center;
     font-size: 50px;
 }
