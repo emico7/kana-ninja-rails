@@ -72,71 +72,80 @@ function Question(answer, letters) {
 $(document).ready(function() {
 // $(document).on('ready page:load', function() {
 
-  var varImageFileName = $('#question-container').data('imageFileName');
-  var varAudioFileName = $('#question-container').data('audioFileName');
+    var functionsForQuestionShow = function() {
+      var varImageFileName = $('#question-container').data('imageFileName');
+      var varAudioFileName = $('#question-container').data('audioFileName');
 
-  var currentQuestionImage = new Image(varImageFileName, varAudioFileName);
+      var currentQuestionImage = new Image(varImageFileName, varAudioFileName);
 
-  var answerString = $('#question-container').data('answer');
-  var lettersString = $('#question-container').data('letters');
-  var currentQuestion = new Question(answerString, lettersString);
+      var answerString = $('#question-container').data('answer');
+      var lettersString = $('#question-container').data('letters');
+      var currentQuestion = new Question(answerString, lettersString);
 
-  var buildLetterButtonTemplate = function(letter, index) {
-      var template = '<div class="letter-button" data-index="' + index + '">' + letter + '</div>'
+      var buildLetterButtonTemplate = function(letter, index) {
+          var template = '<div class="letter-button" data-index="' + index + '">' + letter + '</div>'
 
-      return $(template)
-  };
+          return $(template)
+      };
 
-  function createLetterButtons() {
-      var $letterContainer = $('.letter-container');
-      var num = currentQuestion.letters.length;
-      for (var i = 0; i < num; i++) {
-          var $newLetterButton = buildLetterButtonTemplate(currentQuestion.letters[i], i);
-          $letterContainer.append($newLetterButton);
-      }
-  }
-
-  createLetterButtons();
-
-  var $currentLetter = $('.letter-button');
-  var $userAnswer = $('.user-answer');
-
-  var userAnswer = "";
-
-  $currentLetter.click(function() {
-
-    var letterIndex = $(this).data("index");
-    var clickedLetter = currentQuestion.letters[letterIndex];
-    // clickedLetter.audioFile.play();
-
-    userAnswer += clickedLetter
-    $userAnswer.append(clickedLetter);
-
-  });
-
-  $(".question-image").click(function() {
-    currentQuestionImage.audioFile.play();
-  });
-
-  $('.clear-answer').click(function() {
-    userAnswer = "";
-    $userAnswer.html(userAnswer);
-  })
-
-  $('.submit-button').click(function() {
-
-      if (currentQuestion.answer === userAnswer) {
-        $(".result-text").html("Correct!");
-      } else {
-        $(".result-text").html("Wrong...");
+      function createLetterButtons() {
+          var $letterContainer = $('.letter-container');
+          var num = currentQuestion.letters.length;
+          for (var i = 0; i < num; i++) {
+              var $newLetterButton = buildLetterButtonTemplate(currentQuestion.letters[i], i);
+              $letterContainer.append($newLetterButton);
+          }
       }
 
-      $("#answer-result-modal").show();
-      userAnswer = "";
-      $userAnswer.html(userAnswer);
-  });
+      createLetterButtons();
 
-  $(".close").click(function() {
-    $("#answer-result-modal").hide();
-  });
+      var $currentLetter = $('.letter-button');
+      var $userAnswer = $('.user-answer');
+
+      var userAnswer = "";
+
+      $currentLetter.click(function() {
+
+        var letterIndex = $(this).data("index");
+        var clickedLetter = currentQuestion.letters[letterIndex];
+        // clickedLetter.audioFile.play();
+
+        userAnswer += clickedLetter
+        $userAnswer.append(clickedLetter);
+
+      });
+
+      $(".question-image").click(function() {
+        currentQuestionImage.audioFile.play();
+      });
+
+      $('.clear-answer').click(function() {
+        userAnswer = "";
+        $userAnswer.html(userAnswer);
+      })
+
+      $('.submit-button').click(function() {
+
+          if (currentQuestion.answer === userAnswer) {
+            $(".result-text").html("Correct!");
+          } else {
+            $(".result-text").html("Wrong...");
+          }
+
+          $("#answer-result-modal").show();
+          userAnswer = "";
+          $userAnswer.html(userAnswer);
+      });
+
+      $(".close").click(function() {
+        $("#answer-result-modal").hide();
+      });
+    };
+
+    if ($('.question-image').length > 0) {
+      functionsForQuestionShow();
+      console.log("Functions for questions show are loaded.");
+    } else {
+      console.log("Functions for questions show are not loaded.");
+    }
 });

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :preps
+
   resources :questions
 
   get 'about' => 'menu#about'

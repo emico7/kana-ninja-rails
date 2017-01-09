@@ -26,7 +26,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:image_file_name, :audio_file_name, :answer)
+    params.require(:question).permit(:image_file_name, :audio_file_name, :answer, :letters, :translation)
   end
 
 end
