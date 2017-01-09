@@ -1,0 +1,2 @@
+class Prep < ApplicationRecord
+end

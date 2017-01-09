@@ -1,0 +1,52 @@
+function Letter(character, audioFile) {
+    this.character = character;
+    this.audioFile = new buzz.sound(audioFile, {
+        preload: true
+    });
+}
+
+var lettersString = $('#prep-container').data('letters');
+
+var setAudioFile = function(character) {
+    var actualFileName;
+    switch (character) {
+        case "あ":
+            actualFileName = "<%= asset_path('1_a.m4a') %>";
+            break;
+        case "い":
+            actualFileName = "<%= asset_path('2_i.m4a') %>";
+            break;
+        case "う":
+            actualFileName = "<%= asset_path('3_u.m4a') %>";
+            break;
+        case "え":
+            actualFileName = "<%= asset_path('4_e.m4a') %>";
+            break;
+        case "お":
+            actualFileName = "<%= asset_path('5_o.m4a') %>";
+            break;
+        default:
+            actualFileName = "<%= asset_path('1_a.m4a') %>";
+    }
+    return actualFileName;
+}
+
+$(document).ready(function() {
+
+    var functionsForPrepShow = function() {
+        $('.letter-button').click(function() {
+            var currentCharacter = $(this).text();
+            var currentAudioFileName = setAudioFile(currentCharacter);
+            var currentLetter = new Letter(currentCharacter, currentAudioFileName);
+
+            currentLetter.audioFile.play();
+        });
+    };
+
+    if ($('.prep-letter-container').length > 0) {
+      functionsForPrepShow();
+      console.log("Functions for prep show are loaded.");
+    } else {
+      console.log("Functions for prep show are not loaded.");
+    }
+});
