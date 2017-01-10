@@ -80,22 +80,22 @@ $(document).ready(function() {
 
       $currentLetter.click(function() {
 
-        var letterIndex = $(this).data("index");
-        var clickedLetter = currentQuestion.letters[letterIndex];
-        // clickedLetter.audioFile.play();
+          var letterIndex = $(this).data("index");
+          var clickedLetter = currentQuestion.letters[letterIndex];
+          // clickedLetter.audioFile.play();
 
-        userAnswer += clickedLetter
-        $userAnswer.append(clickedLetter);
+          userAnswer += clickedLetter
+          $userAnswer.append(clickedLetter);
 
       });
 
       $(".question-image").click(function() {
-        currentQuestionImage.audioFile.play();
+          currentQuestionImage.audioFile.play();
       });
 
       $('.clear-answer').click(function() {
-        userAnswer = "";
-        $userAnswer.html(userAnswer);
+          userAnswer = "";
+          $userAnswer.html(userAnswer);
       })
 
       $('.submit-button').click(function() {
@@ -107,19 +107,19 @@ $(document).ready(function() {
           }
 
           $("#answer-result-modal").show();
-          userAnswer = "";
-          $userAnswer.html(userAnswer);
       });
 
       $(".close").click(function() {
-        $("#answer-result-modal").hide();
+          $("#answer-result-modal").hide();
+          userAnswer = "";
+          $userAnswer.html(userAnswer);
       });
     };
 
     if ($('.question-image').length > 0) {
-      functionsForQuestionShow();
-      console.log("Functions for questions show are loaded.");
-    } else {
-      console.log("Functions for questions show are not loaded.");
+        functionsForQuestionShow();
+        console.log("Functions for questions show are loaded.");
+      } else {
+        console.log("Functions for questions show are not loaded.");
     }
 });
