@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
+  before_action :authorize_user, except: [:show]
 
   def index
     @questions = Question.all
@@ -30,4 +31,10 @@ class QuestionsController < ApplicationController
     params.require(:question).permit(:image_file_name, :audio_file_name, :answer, :letters, :translation)
   end
 
+  def authorize_user
+    unless current_user.admin?
+      flash[:alert] = "You must be an admin to do that."
+      redirect_to root_path
+    end
+  end
 end

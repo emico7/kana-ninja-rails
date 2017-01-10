@@ -1,4 +1,7 @@
 class PrepsController < ApplicationController
+  before_action :authorize_user, except: [:show]
+  before_action :authenticate_user!, except: [:show]
+
   def index
     @preps = Preps.all
   end
@@ -29,5 +32,12 @@ class PrepsController < ApplicationController
 
   def prep_params
     params.require(:prep).permit(:letters)
+  end
+
+  def authorize_user
+    unless current_user.admin?
+      flash[:alert] = "You must be an admin to do that."
+      redirect_to root_path
+    end
   end
 end
