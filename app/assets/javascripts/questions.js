@@ -1,14 +1,3 @@
-// Level 1 – specific set of words/images, go through in order
-// Collect words/images, make/find recordings
-// Level 2 - randomly choose from level 2 set of words
-// Collect words/images, make/find recordings
-// Level 3 - randomly choose from level 3 set of words
-// Level 4 - randomly choose from level 4 set of words
-// Level 5 - randomly choose from level 5 set of words
-
-// $(document).ready(function() {
-// });
-
 // Game object
 // score
 
@@ -54,21 +43,6 @@ function Question(answer, letters) {
     this.letters = letters;
 }
 
-// // var currentExercise = new Exercise("house.jpg",  )
-//
-// // letter object
-// // letter
-// // audio file
-//
-// function Letter(letter, audioFile) {
-//     this.letter = letter;
-//     this.audioFile = new buzz.sound("assets/audio/" + audioFile, {
-//         formats: [ 'm4a' ],
-//         preload: true
-//     });
-// }
-//
-
 $(document).ready(function() {
 // $(document).on('ready page:load', function() {
 
@@ -106,22 +80,22 @@ $(document).ready(function() {
 
       $currentLetter.click(function() {
 
-        var letterIndex = $(this).data("index");
-        var clickedLetter = currentQuestion.letters[letterIndex];
-        // clickedLetter.audioFile.play();
+          var letterIndex = $(this).data("index");
+          var clickedLetter = currentQuestion.letters[letterIndex];
+          // clickedLetter.audioFile.play();
 
-        userAnswer += clickedLetter
-        $userAnswer.append(clickedLetter);
+          userAnswer += clickedLetter
+          $userAnswer.append(clickedLetter);
 
       });
 
       $(".question-image").click(function() {
-        currentQuestionImage.audioFile.play();
+          currentQuestionImage.audioFile.play();
       });
 
       $('.clear-answer').click(function() {
-        userAnswer = "";
-        $userAnswer.html(userAnswer);
+          userAnswer = "";
+          $userAnswer.html(userAnswer);
       })
 
       $('.submit-button').click(function() {
@@ -133,19 +107,19 @@ $(document).ready(function() {
           }
 
           $("#answer-result-modal").show();
-          userAnswer = "";
-          $userAnswer.html(userAnswer);
       });
 
       $(".close").click(function() {
-        $("#answer-result-modal").hide();
+          $("#answer-result-modal").hide();
+          userAnswer = "";
+          $userAnswer.html(userAnswer);
       });
     };
 
     if ($('.question-image').length > 0) {
-      functionsForQuestionShow();
-      console.log("Functions for questions show are loaded.");
-    } else {
-      console.log("Functions for questions show are not loaded.");
+        functionsForQuestionShow();
+        console.log("Functions for questions show are loaded.");
+      } else {
+        console.log("Functions for questions show are not loaded.");
     }
 });

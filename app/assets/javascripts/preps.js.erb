@@ -5,38 +5,26 @@ function Letter(character, audioFile) {
     });
 }
 
-var lettersString = $('#prep-container').data('letters');
+var pathToJsonFile = "<%= asset_path('letter-audio.json') %>";
 
-var setAudioFile = function(character) {
-    var actualFileName;
-    switch (character) {
-        case "あ":
-            actualFileName = "<%= asset_path('1_a.m4a') %>";
-            break;
-        case "い":
-            actualFileName = "<%= asset_path('2_i.m4a') %>";
-            break;
-        case "う":
-            actualFileName = "<%= asset_path('3_u.m4a') %>";
-            break;
-        case "え":
-            actualFileName = "<%= asset_path('4_e.m4a') %>";
-            break;
-        case "お":
-            actualFileName = "<%= asset_path('5_o.m4a') %>";
-            break;
-        default:
-            actualFileName = "<%= asset_path('1_a.m4a') %>";
-    }
-    return actualFileName;
-}
+var audioFiles;
+
+$.getJSON(pathToJsonFile).done(function(data) {
+  audioFiles = data;
+});
+
+// var setAudioFile = function(character) {
+//     var actualFileName = audioFiles[character];
+//     return actualFileName;
+// }
 
 $(document).ready(function() {
+// $(document).on('ready page:load', function() {
 
     var functionsForPrepShow = function() {
         $('.letter-button').click(function() {
             var currentCharacter = $(this).text();
-            var currentAudioFileName = setAudioFile(currentCharacter);
+            var currentAudioFileName = audioFiles[currentCharacter];
             var currentLetter = new Letter(currentCharacter, currentAudioFileName);
 
             currentLetter.audioFile.play();

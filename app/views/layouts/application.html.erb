@@ -4,8 +4,11 @@
     <title>Kana Ninja</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <!-- <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %> -->
+    <!-- <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> -->
+    <%= javascript_include_tag 'application' %>
+
   </head>
 
   <body>
@@ -13,6 +16,14 @@
       <ul class="nav nav-tabs">
         <li><%= link_to "Main Menu", root_path %></li>
         <li><%= link_to "About", about_path %></li>
+
+        <div class="pull-right user-info">
+        <% if user_signed_in? %>
+          Signed in as: <strong><%= current_user.email %></strong> |
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
+        <% end %>
+      </div>
+
       </ul>
       <%= yield %>
 
