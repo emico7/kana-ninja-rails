@@ -1,6 +1,6 @@
 <div>
   <%= content_tag :div, id: 'question-container', data: {image_file_name: @question.image_file_name, audio_file_name: asset_path(@question.audio_file_name), answer: @question.answer, letters: @question.letters} do %>
-  <div class="container question">
+  <div class="container main-container">
     <div class="instruction">
       <p>Click on the image to hear the sound</p>
     </div>
@@ -24,8 +24,8 @@
   <!-- Modal -->
   <div id="answer-result-modal" class="modal">
     <div class="modal-content">
-      <!-- <span class="close"><%= link_to "Next", question_path(id: @question.id + 1)%></span> -->
-      <span class="close">Close</span>
+      <span class="close"><%= link_to "Next", question_path(id: @question.id + 1)%></span>
+      <!-- <span class="close">Close</span> -->
       <p class="result-text">RESULT</p>
     </div>
   </div>
