@@ -24,7 +24,13 @@
   <!-- Modal -->
   <div id="answer-result-modal" class="modal">
     <div class="modal-content">
-      <span class="close"><%= link_to "Next", question_path(id: @question.id + 1)%></span>
+      <span class="close">
+        <% if @question.end_of_level %>
+          <%= link_to "Done!", root_path %>
+        <% else %>
+          <%= link_to "Next", question_path(id: @question.id + 1)%>
+        <% end %>
+      </span>
       <!-- <span class="close">Close</span> -->
       <p class="result-text">RESULT</p>
     </div>
