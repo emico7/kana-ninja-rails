@@ -1,6 +1,6 @@
 # Kana Ninja
 
-https://mighty-ridge-19007.herokuapp.com/
+https://mighty-ridge-19007.herokuapp.com/ <br/>
 (It's currently hosted at Heroku for free so it'll take a few minutes to load initally.)
 
 * Rails version 5.0.1
