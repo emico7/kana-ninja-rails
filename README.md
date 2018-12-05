@@ -9,4 +9,4 @@ https://mighty-ridge-19007.herokuapp.com/ <br/>
 
 **Notes for Admin**
 
-- When creating a new question, the audio file name shouldn't include its file path, just a file name and an extension. Otherwise audio file doesn't get generated correctly. Good examples => ("house.m4a", "heart.m4a") Bad examples => ("assets/audio/house.m4a", "house")
+- When creating a new question, the audio file name shouldn't include its file path, just a file name and an extension. Otherwise audio file doesn't get generated correctly. <br/>Good examples => ("house.m4a", "heart.m4a") <br/>Bad examples => ("assets/audio/house.m4a", "house")
